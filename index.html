@@ -434,7 +434,7 @@ a{color:inherit}
     <div class="ideas">
       <button class="idea" data-jump="goal"><span class="no">01</span><span>
         <h3>Ask “learn or fun” before the price</h3>
-        <p>Your “What would you like to do?” screen — Learn to draw or Draw for fun — only appears after the paywall is closed. Asked first, it lets the paywall speak to that person: “Learn to draw in 30 days” for a learner, “Draw without limits” for someone here to play.</p>
+        <p>Your “What would you like to do?” screen — Learn to draw or Draw for fun — only appears after the paywall is closed. Asked first, it lets the paywall speak to that person: “Your 30-day drawing course” for a learner, “Draw without limits” for someone here to play.</p>
         <span class="seeit">See the screen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         <span class="out"><b>CR +15–20%</b><span>to purchase</span></span></button>
       <button class="idea" data-jump="first"><span class="no">02</span><span>
@@ -443,8 +443,8 @@ a{color:inherit}
         <span class="seeit">See the screen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         <span class="out"><b>CR +10–15%</b><span>to purchase</span></span></button>
       <button class="idea" data-jump="welcome"><span class="no">03</span><span>
-        <h3>Ask for tracking and notifications after the paywall</h3>
-        <p>Two system prompts are the first thing a new install sees — before your welcome photo has said a word. Asked on the home screen once someone has started a trial, they stop pulling people out at the very start.</p>
+        <h3>Ask for consent, tracking and notifications after the paywall</h3>
+        <p>A new install meets three dialogs in a row — data consent with 210 partners, tracking, then notifications — before your welcome photo has said a word. Moved to the home screen, after the paywall, they stop pulling people out at the very start.</p>
         <span class="seeit">See the screen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
         <span class="out"><b>CR +10–15%</b><span>to purchase</span></span></button>
       <button class="idea" data-jump="paywall"><span class="no">04</span><span>
@@ -479,7 +479,7 @@ a{color:inherit}
 <div class="stage">
   <div class="phonecol">
     <div class="tools">
-      <div class="seg" id="segLang"><button data-lang="en" class="on">EN</button><button data-lang="pl">PL</button><button data-lang="de">DE</button></div>
+      <div class="seg" id="segLang"><button data-lang="en" class="on">EN</button><button data-lang="es">ES</button><button data-lang="pt">PT</button></div>
       <div class="seg" id="segTheme"><button data-theme="light" class="on">Light</button><button data-theme="dark">Dark</button></div>
       <button class="demo-btn" id="demoBtn"><svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor"><path d="M7 4.5v15l12-7.5z"/></svg>30-sec walkthrough</button>
     </div>
@@ -625,7 +625,9 @@ a{color:inherit}
 <!-- HOME -->
 <section class="scr scr--home" data-id="home">
   <div class="scr-body"><img class="ae-media" src="img/home.jpg" alt="ArtEasy home"></div>
-  <div class="ae-dim" id="dlgAtt"><div class="ae-sys"><img src="img/att.png" alt="" id="attIcon"><h5 data-t="sy.atth"></h5><p data-t="sy.attp"></p>
+  <div class="ae-dim" id="dlgCon"><div class="ae-sys"><img src="img/icon.png" alt=""><h5 data-t="sy.ch"></h5><p data-t="sy.cp"></p>
+    <button class="b" data-dlg="con" data-t="sy.cyes"></button><button class="b" data-dlg="con" data-t="sy.cno"></button></div></div>
+  <div class="ae-dim off" id="dlgAtt"><div class="ae-sys"><img src="img/att.png" alt="" id="attIcon"><h5 data-t="sy.atth"></h5><p data-t="sy.attp"></p>
     <button class="b" data-dlg="att" data-t="sy.no"></button><button class="b" data-dlg="att" data-t="sy.allow"></button></div></div>
   <div class="ae-dim off" id="dlgPush"><div class="ae-sys"><h5 data-t="sy.pushh"></h5><p data-t="sy.pushp"></p>
     <div class="row"><button class="b" data-dlg="push" data-t="sy.dont"></button><button class="b" data-dlg="push" data-t="sy.allow"></button></div></div></div>
@@ -645,59 +647,63 @@ a{color:inherit}
 
 <script>
 /* ================= copy, per language (phone screens only) ================= */
-var LANGS = ['en','pl','de'];
+var LANGS = ['en','es','pt'];
 var T = {
- 'cont':    ["Continue","Dalej","Weiter"],
- 'wel.h':   ["Learn to draw anything you want","Naucz się rysować wszystko, co chcesz","Lerne zu zeichnen, was du willst"],
- 'wel.sub': ["Use your phone camera to draw, upload photos from the gallery or browser, try all the templates.","Rysuj z aparatem telefonu, wgrywaj zdjęcia z galerii lub przeglądarki, wypróbuj wszystkie szablony.","Zeichne mit der Handykamera, lade Fotos aus der Galerie oder dem Browser hoch, probiere alle Vorlagen aus."],
- 'wel.signin':["Purchased on the web? <b>Sign In</b>","Kupiono w sieci? <b>Zaloguj się</b>","Im Web gekauft? <b>Anmelden</b>"],
- 'sk.h':    ["Turn your photo<br>to sketch","Zamień zdjęcie<br>w szkic","Mach aus deinem Foto<br>eine Skizze"],
- 'sk.sub':  ["Choose a photo from your gallery, turn a photo to sketch and draw","Wybierz zdjęcie z galerii, zamień je w szkic i rysuj","Wähle ein Foto aus der Galerie, mach daraus eine Skizze und zeichne"],
- 'pr.h':    ["Become a part of<br>something bigger!","Dołącz do czegoś<br>większego!","Werde Teil von<br>etwas Größerem!"],
- 'pr.sub':  ["Thousands of users are getting better every day. Start writing your success story with ArtEasy today!","Tysiące osób rysuje coraz lepiej każdego dnia. Zacznij swoją historię z ArtEasy już dziś!","Tausende werden jeden Tag besser. Schreib deine Erfolgsgeschichte mit ArtEasy – noch heute!"],
- 'tr.h':    ["Trace image easily","Łatwo odrysuj obraz","Bilder ganz leicht nachzeichnen"],
- 'tr.sub':  ["Upload your photo from the gallery, generate it using AI generation, take a photo with the camera and transfer it to paper","Wgraj zdjęcie z galerii, wygeneruj je z AI albo zrób zdjęcie aparatem i przenieś je na papier","Lade ein Foto hoch, erstelle es mit KI oder fotografiere es mit der Kamera und übertrage es aufs Papier"],
- 'up.h':    ["Upload photo from gallery","Wgraj zdjęcie z galerii","Foto aus der Galerie"],
- 'up.sub':  ["Upload your photos from the gallery and draw them on paper","Wgraj zdjęcia z galerii i narysuj je na papierze","Lade deine Fotos hoch und zeichne sie auf Papier"],
- 'go.h':    ["What would you like<br>to do?","Co chcesz<br>robić?","Was möchtest du<br>machen?"],
- 'go.learn':["Learn to draw","Nauczyć się rysować","Zeichnen lernen"],
- 'go.fun':  ["Draw for fun","Rysować dla zabawy","Zum Spaß zeichnen"],
- 'fi.h':    ["Let's draw your<br>first sketch!","Narysujmy twój<br>pierwszy szkic!","Lass uns deine<br>erste Skizze zeichnen!"],
- 'fi.learn':["Lesson one of your 30-day course: an eye, step by step. Point the camera at your paper and trace the lines.","Pierwsza lekcja z 30-dniowego kursu: oko, krok po kroku. Skieruj aparat na kartkę i odrysuj linie.","Lektion 1 deines 30-Tage-Kurses: ein Auge, Schritt für Schritt. Richte die Kamera aufs Papier und zeichne die Linien nach."],
- 'fi.fun':  ["Pick any photo, turn it into a sketch and trace it — use a cup, tripod, or a stack of books to keep your phone steady.","Wybierz dowolne zdjęcie, zamień je w szkic i odrysuj — kubek, statyw albo stos książek utrzyma telefon.","Wähle ein Foto, mach eine Skizze daraus und zeichne sie nach – eine Tasse, ein Stativ oder ein Bücherstapel hält dein Handy."],
- 'fi.chipL':["30-day course · Lesson 1","Kurs 30 dni · Lekcja 1","30-Tage-Kurs · Lektion 1"],
- 'fi.chipF':["Photo to Sketch","Zdjęcie w szkic","Foto zu Skizze"],
- 'fi.cta':  ["Draw with camera","Rysuj z aparatem","Mit Kamera zeichnen"],
- 'fi.no':   ["I'm not ready","Jeszcze nie teraz","Noch nicht"],
- 'pw.hL':   ["Learn to draw in 30 days","Naucz się rysować w 30 dni","In 30 Tagen zeichnen lernen"],
- 'pw.hF':   ["Draw without limits","Rysuj bez ograniczeń","Zeichne ohne Grenzen"],
- 'pw.sL':   ["Your 30-day course, step-by-step lessons by level, 300+ sketches for practice","Twój 30-dniowy kurs, lekcje krok po kroku według poziomu, 300+ szkiców do ćwiczeń","Dein 30-Tage-Kurs, Lektionen nach Level, 300+ Skizzen zum Üben"],
- 'pw.sF':   ["Unlimited templates, draw from photos without restrictions, 300+ sketches for practice","Nielimitowane szablony, rysowanie ze zdjęć bez ograniczeń, 300+ szkiców do ćwiczeń","Unbegrenzte Vorlagen, Fotos ohne Limit, 300+ Skizzen zum Üben"],
- 'pw.promo':["Enter promo code","Wpisz kod promocyjny","Promo-Code eingeben"],
- 'pw.rate': ["<b>4.6 ★ on the App Store</b>9.6K ratings · 1M+ downloads","<b>1M+ pobrań</b>Ocena 4,6 ★ w App Store (USA)","<b>4,4 ★ im App Store</b>1.351 Bewertungen · 1M+ Downloads"],
- 'pw.free': ["Free","Za darmo","Gratis"],
- 'pw.3d':   ["3 Days","3 dni","3 Tage"],
- 'pw.1w':   ["1 Week","1 tydzień","1 Woche"],
- 'pw.nopay':["No payment now","Bez płatności teraz","Jetzt keine Zahlung"],
- 'pw.ctaT': ["Try for Free","Wypróbuj za darmo","Gratis testen"],
- 'pw.ctaW': ["Continue","Dalej","Weiter"],
- 'pw.fineT':["3 days free, then 14,99 €/week","3 dni za darmo, potem 14,99 €/tydz.","3 Tage gratis, dann 14,99 €/Woche"],
- 'pw.fineW':["0,99 € for your first week","0,99 € za pierwszy tydzień","0,99 € für die erste Woche"],
- 'lg.terms':["Terms of Use","Regulamin","AGB"],
- 'lg.priv': ["Privacy policy","Prywatność","Datenschutz"],
- 'lg.rest': ["Restore","Przywróć","Wiederherstellen"],
- 'of.h':    ["A third off,<br>before you go","O jedną trzecią taniej,<br>zanim wyjdziesz","Ein Drittel günstiger,<br>bevor du gehst"],
- 'of.price':["then <s>14,99 €</s> <b>9,99 €</b> / week","potem <s>14,99 €</s> <b>9,99 €</b> / tydz.","dann <s>14,99 €</s> <b>9,99 €</b> / Woche"],
- 'of.save': ["33% less than the plan you just saw","33% taniej niż poprzedni plan","33 % günstiger als der Plan eben"],
- 'of.note': ["Same 3 days free. Cancel anytime before the trial ends.","Te same 3 dni za darmo. Anuluj w dowolnym momencie przed końcem okresu próbnego.","Dieselben 3 Tage gratis. Jederzeit vor Ende des Tests kündbar."],
- 'of.cta':  ["Try for 0,00 €","Wypróbuj za 0,00 €","Für 0,00 € testen"],
- 'sy.atth': ["Allow “ArtEasy” to track your activity across other companies’ apps and websites?","Zezwolić „ArtEasy” na śledzenie Twojej aktywności w aplikacjach i witrynach innych firm?","Darf „ArtEasy“ deine Aktivitäten in Apps und auf Websites anderer Firmen erfassen?"],
- 'sy.attp': ["This data helps us provide relevant content suggestions, based on your interests and preferences","Te dane pomagają nam proponować treści dopasowane do Twoich zainteresowań","Diese Daten helfen uns, Inhalte passend zu deinen Interessen vorzuschlagen"],
- 'sy.no':   ["Ask App Not to Track","Poproś o brak śledzenia","App bitten, nicht zu tracken"],
- 'sy.allow':["Allow","Zezwól","Erlauben"],
- 'sy.dont': ["Don’t Allow","Nie zezwalaj","Nicht erlauben"],
- 'sy.pushh':["“ArtEasy” Would Like to Send You Notifications","„ArtEasy” chce wysyłać Ci powiadomienia","„ArtEasy“ möchte dir Mitteilungen senden"],
- 'sy.pushp':["Notifications may include alerts, sounds and icon badges. These can be configured in Settings.","Powiadomienia mogą zawierać alerty, dźwięki i plakietki. Możesz je zmienić w Ustawieniach.","Mitteilungen können Hinweise, Töne und Kennzeichen enthalten. Das lässt sich in den Einstellungen ändern."]
+ 'cont':    ["Continue","Continuar","Continuar"],
+ 'wel.h':   ["Learn to draw anything you want","Aprende a dibujar lo que quieras","Aprenda a desenhar o que quiser"],
+ 'wel.sub': ["Use your phone camera to draw, upload photos from the gallery or browser, try all the templates.","Dibuja con la cámara del teléfono, sube fotos de la galería o del navegador y prueba todas las plantillas.","Desenhe com a câmera do celular, envie fotos da galeria ou do navegador e experimente todos os modelos."],
+ 'wel.signin':["Purchased on the web? <b>Sign In</b>","¿Compraste en la web? <b>Inicia sesión</b>","Comprou na web? <b>Entrar</b>"],
+ 'sk.h':    ["Turn your photo<br>to sketch","Convierte tu foto<br>en boceto","Transforme sua foto<br>em esboço"],
+ 'sk.sub':  ["Choose a photo from your gallery, turn a photo to sketch and draw","Elige una foto de tu galería, conviértela en boceto y dibuja","Escolha uma foto da galeria, transforme em esboço e desenhe"],
+ 'pr.h':    ["Become a part of<br>something bigger!","¡Forma parte de<br>algo más grande!","Faça parte de<br>algo maior!"],
+ 'pr.sub':  ["Thousands of users are getting better every day. Start writing your success story with ArtEasy today!","Miles de usuarios mejoran cada día. ¡Empieza hoy tu historia de éxito con ArtEasy!","Milhares de usuários melhoram todos os dias. Comece hoje sua história de sucesso com o ArtEasy!"],
+ 'tr.h':    ["Trace image easily","Calca imágenes fácilmente","Decalque imagens com facilidade"],
+ 'tr.sub':  ["Upload your photo from the gallery, generate it using AI generation, take a photo with the camera and transfer it to paper","Sube una foto de la galería, créala con IA o hazla con la cámara y pásala al papel","Envie uma foto da galeria, gere com IA ou tire com a câmera e passe para o papel"],
+ 'up.h':    ["Upload photo from gallery","Sube una foto de la galería","Envie uma foto da galeria"],
+ 'up.sub':  ["Upload your photos from the gallery and draw them on paper","Sube tus fotos de la galería y dibújalas en papel","Envie suas fotos da galeria e desenhe no papel"],
+ 'go.h':    ["What would you like<br>to do?","¿Qué te gustaría<br>hacer?","O que você gostaria<br>de fazer?"],
+ 'go.learn':["Learn to draw","Aprender a dibujar","Aprender a desenhar"],
+ 'go.fun':  ["Draw for fun","Dibujar por diversión","Desenhar por diversão"],
+ 'fi.h':    ["Let's draw your<br>first sketch!","¡Dibujemos tu<br>primer boceto!","Vamos desenhar seu<br>primeiro esboço!"],
+ 'fi.learn':["Lesson one of your 30-day course: an eye, step by step. Point the camera at your paper and trace the lines.","Lección 1 de tu curso de 30 días: un ojo, paso a paso. Apunta la cámara al papel y calca las líneas.","Aula 1 do seu curso de 30 dias: um olho, passo a passo. Aponte a câmera para o papel e decalque as linhas."],
+ 'fi.fun':  ["Pick any photo, turn it into a sketch and trace it — use a cup, tripod, or a stack of books to keep your phone steady.","Elige cualquier foto, conviértela en boceto y cálcala: una taza, un trípode o unos libros mantienen el teléfono fijo.","Escolha qualquer foto, transforme em esboço e decalque — uma caneca, um tripé ou alguns livros seguram o celular."],
+ 'fi.chipL':["30-day course · Lesson 1","Curso de 30 días · Lección 1","Curso de 30 dias · Aula 1"],
+ 'fi.chipF':["Photo to Sketch","Foto a boceto","Foto em esboço"],
+ 'fi.cta':  ["Draw with camera","Dibujar con la cámara","Desenhar com a câmera"],
+ 'fi.no':   ["I'm not ready","Todavía no","Ainda não"],
+ 'pw.hL':   ["Your 30-day drawing course","Tu curso de dibujo de 30 días","Seu curso de desenho de 30 dias"],
+ 'pw.hF':   ["Draw without limits","Dibuja sin límites","Desenhe sem limites"],
+ 'pw.sL':   ["Step-by-step lessons by level, unlimited templates, 300+ sketches for practice","Lecciones paso a paso por nivel, plantillas ilimitadas, más de 300 bocetos","Aulas passo a passo por nível, modelos ilimitados, mais de 300 esboços"],
+ 'pw.sF':   ["Unlimited templates, draw from photos without restrictions, 300+ sketches for practice","Plantillas ilimitadas, dibuja desde fotos sin límites, más de 300 bocetos","Modelos ilimitados, desenhe a partir de fotos sem limites, mais de 300 esboços"],
+ 'pw.promo':["Enter promo code","Código promocional","Código promocional"],
+ 'pw.rate': ["<b>4.6 ★ on the App Store</b>9.6K ratings · 1M+ downloads","<b>1M+ descargas</b>4.6 ★ en el App Store de EE. UU.","<b>1M+ downloads</b>4.6 ★ na App Store dos EUA"],
+ 'pw.free': ["Free","Gratis","Grátis"],
+ 'pw.3d':   ["3 Days","3 días","3 dias"],
+ 'pw.1w':   ["1 Week","1 semana","1 semana"],
+ 'pw.nopay':["No payment now","Sin pago ahora","Sem pagamento agora"],
+ 'pw.ctaT': ["Try for Free","Prueba gratis","Teste grátis"],
+ 'pw.ctaW': ["Continue","Continuar","Continuar"],
+ 'pw.fineT':["3 days free, then 14,99 €/week","3 días gratis, luego 14,99 €/semana","3 dias grátis, depois 14,99 €/semana"],
+ 'pw.fineW':["0,99 € for your first week","0,99 € tu primera semana","0,99 € na primeira semana"],
+ 'lg.terms':["Terms of Use","Términos","Termos"],
+ 'lg.priv': ["Privacy policy","Privacidad","Privacidade"],
+ 'lg.rest': ["Restore","Restaurar","Restaurar"],
+ 'of.h':    ["A third off,<br>before you go","Un tercio menos,<br>antes de irte","Um terço a menos,<br>antes de sair"],
+ 'of.price':["then <s>14,99 €</s> <b>9,99 €</b> / week","luego <s>14,99 €</s> <b>9,99 €</b> / semana","depois <s>14,99 €</s> <b>9,99 €</b> / semana"],
+ 'of.save': ["33% less than the plan you just saw","33% menos que el plan anterior","33% a menos que o plano anterior"],
+ 'of.note': ["Same 3 days free. Cancel anytime before the trial ends.","Los mismos 3 días gratis. Cancela cuando quieras antes del fin de la prueba.","Os mesmos 3 dias grátis. Cancele quando quiser antes do fim do teste."],
+ 'of.cta':  ["Try for 0,00 €","Prueba por 0,00 €","Teste por 0,00 €"],
+ 'sy.ch':   ["ArtEasy asks for your consent to use your personal data","ArtEasy solicita tu consentimiento para usar tus datos personales","O ArtEasy pede seu consentimento para usar seus dados pessoais"],
+ 'sy.cp':   ["Personalised advertising and content, measurement, audience research. Shared with 210 partners.","Publicidad y contenido personalizados, medición, investigación de audiencia. Compartido con 210 socios.","Publicidade e conteúdo personalizados, medição, pesquisa de público. Compartilhado com 210 parceiros."],
+ 'sy.cyes': ["Consent","Consentir","Consentir"],
+ 'sy.cno':  ["Do not consent","No consentir","Não consentir"],
+ 'sy.atth': ["Allow “ArtEasy” to track your activity across other companies’ apps and websites?","¿Permitir que “ArtEasy” rastree tu actividad en apps y sitios web de otras empresas?","Permitir que “ArtEasy” rastreie sua atividade em apps e sites de outras empresas?"],
+ 'sy.attp': ["This data helps us provide relevant content suggestions, based on your interests and preferences","Estos datos nos ayudan a sugerirte contenido relevante según tus intereses","Esses dados nos ajudam a sugerir conteúdo relevante com base nos seus interesses"],
+ 'sy.no':   ["Ask App Not to Track","Pedir a la app que no rastree","Pedir ao app para não rastrear"],
+ 'sy.allow':["Allow","Permitir","Permitir"],
+ 'sy.dont': ["Don’t Allow","No permitir","Não permitir"],
+ 'sy.pushh':["“ArtEasy” Would Like to Send You Notifications","“ArtEasy” quiere enviarte notificaciones","“ArtEasy” gostaria de enviar notificações"],
+ 'sy.pushp':["Notifications may include alerts, sounds and icon badges. These can be configured in Settings.","Las notificaciones pueden incluir alertas, sonidos y globos. Puedes configurarlas en Ajustes.","As notificações podem incluir alertas, sons e indicadores. Configure-as nos Ajustes."]
 };
 var REVIEWS = [
   ['Rushing_Williamk','Very good! The interface is really simple and easy to use. I can now draw anywhere with ease'],
@@ -708,7 +714,7 @@ var REVIEWS = [
 
 /* ================= state ================= */
 var S0 = {lang:'en', theme:'light'};
-function defaults(){ return { lang:S0.lang, theme:S0.theme, goal:'learn', plan:'trial', dlg:'att' }; }
+function defaults(){ return { lang:S0.lang, theme:S0.theme, goal:'learn', plan:'trial', dlg:'con' }; }
 var S = defaults();
 function L(){ return LANGS.indexOf(S.lang); }
 function t(k,v){ var s=(T[k]||[k])[L()]; if(v) Object.keys(v).forEach(function(x){ s=s.split('{'+x+'}').join(v[x]); }); return s; }
@@ -740,6 +746,7 @@ function syncScreen(){
   document.getElementById('noPay').style.visibility = tr ? 'visible' : 'hidden';
   document.getElementById('payCta').textContent = tr ? t('pw.ctaT') : t('pw.ctaW');
   document.getElementById('payFine').textContent = tr ? t('pw.fineT') : t('pw.fineW');
+  document.getElementById('dlgCon').classList.toggle('off', S.dlg!=='con');
   document.getElementById('dlgAtt').classList.toggle('off', S.dlg!=='att');
   document.getElementById('dlgPush').classList.toggle('off', S.dlg!=='push');
 }
@@ -752,14 +759,14 @@ document.querySelectorAll('.scr').forEach(function(s){ scr[s.dataset.id]=s; });
 function chrome(){ var dark=S.theme==='dark', l=dark || !!scr[cur].dataset.light;
   document.getElementById('sbar').classList.toggle('light',l);
   document.getElementById('homebar').classList.toggle('light',l); }
-function enter(id){ chrome(); paintChips(); paintPanel(); if(id==='home'){ S.dlg = S.dlg||'att'; syncScreen(); } }
+function enter(id){ chrome(); paintChips(); paintPanel(); if(id==='home'){ S.dlg = S.dlg||'con'; syncScreen(); } }
 function go(id,opts){
   opts=opts||{}; if(id===cur) return;
   var from=scr[cur], to=scr[id];
   if(!opts.back) hist.push(cur);
   if(from){ from.classList.remove('is-active');
     if(!to.classList.contains('sheet') && !from.classList.contains('sheet')) from.classList.add('is-past'); }
-  if(id==='home'){ S.dlg='att'; syncScreen(); }
+  if(id==='home'){ S.dlg='con'; syncScreen(); }
   Object.keys(scr).forEach(function(k){ if(k!==id&&k!==cur) scr[k].classList.remove('is-active'); });
   to.classList.remove('is-past'); to.classList.add('is-active');
   cur=id; enter(id);
@@ -776,7 +783,7 @@ function jump(id){
   Object.keys(scr).forEach(function(k){ scr[k].classList.add('nofx'); scr[k].classList.remove('is-active','is-past'); });
   hist=ORDER.slice(0,i<0?0:i).filter(function(k){ return k!=='offer'; });
   if(id==='offer') scr.paywall.classList.add('is-active');
-  if(id==='home') S.dlg='att';
+  if(id==='home') S.dlg='con';
   scr[id].classList.add('is-active'); cur=id;
   requestAnimationFrame(function(){ requestAnimationFrame(function(){
     Object.keys(scr).forEach(function(k){ scr[k].classList.remove('nofx'); }); }); });
@@ -803,7 +810,7 @@ document.getElementById('payCta').addEventListener('click',function(){ go('home'
 document.getElementById('offerCta').addEventListener('click',function(){ go('home'); });
 document.getElementById('offClose').addEventListener('click',function(){ go('home'); });
 document.querySelectorAll('[data-dlg]').forEach(function(b){ b.addEventListener('click',function(){
-  S.dlg = b.dataset.dlg==='att' ? 'push' : ''; syncScreen(); }); });
+  S.dlg = b.dataset.dlg==='con' ? 'att' : (b.dataset.dlg==='att' ? 'push' : ''); syncScreen(); }); });
 
 function setSeg(id,attr,val){ document.querySelectorAll('#'+id+' button').forEach(function(b){ b.classList.toggle('on', b.dataset[attr]===val); }); }
 function setLang(l){ S.lang=l; S0.lang=l; setSeg('segLang','lang',l); applyStatic(); syncScreen(); paintPanel(); }
@@ -862,8 +869,8 @@ phoneIn.addEventListener('pointerdown',function(e){ if(e.isTrusted && demo.on) s
 
 /* ---- the short panel: hypothesis + potential outcome, nothing else ---- */
 var PANEL = {
-welcome:{n:3,t:'Ask for tracking and notifications after the paywall',
- hyp:'Try opening straight on this screen, <b>because today the tracking prompt and the notification prompt both fire before your welcome photo appears</b> — two system dialogs before the app has shown anything. They move to the home screen, after the paywall.',
+welcome:{n:3,t:'Ask for consent, tracking and notifications after the paywall',
+ hyp:'Try opening straight on this screen, <b>because today a data-consent dialog, the tracking prompt and the notification prompt all fire before your welcome photo appears</b> — three dialogs before the app has shown anything. They move to the home screen, after the paywall.',
  kept:'Your welcome screen untouched — the café photo, “Learn to draw anything you want”, the web sign-in line and your pink Continue.',
  out:'CR +10–15%'},
 sketch:{ctx:true,t:'Turn your photo to sketch',kept:'Untouched — your image, headline and button, in your order.'},
@@ -882,7 +889,7 @@ first:{n:2,t:'Show their first sketch before the paywall',
  kept:'Your screen, your photo, “Draw with camera” and “I’m not ready”. Both buttons now lead to the paywall.',
  out:'CR +10–15%'},
 paywall:{n:1,t:'Ask “learn or fun” before the price',
- hyp:'Try a headline that follows their answer — “Learn to draw in 30 days” or your own “Draw without limits” — <b>because both lines are already true of the app, and today every new install gets the same one</b>. Go back to the question, pick the other card, and this headline changes.',
+ hyp:'Try a headline that follows their answer — “Your 30-day drawing course” or your own “Draw without limits” — <b>because both lines are already true of the app, and today every new install gets the same one</b>. Go back to the question, pick the other card, and this headline changes.',
  n2:4, hyp2:'Try your App Store rating and your 1M+ downloads above the plans, <b>because they appear nowhere on this screen today, while the rating request comes on screen four</b>. The quote is one of your own reviews, verbatim.',
  out2:'CR +10–15%',
  kept:'Your camera-paper hero, Enter promo code, both plan cards, No payment now, the pink Try for Free button and your fine print.',
@@ -891,8 +898,8 @@ offer:{n:5,t:'Let the offer on close say what it saves',
  hyp:'Try this as the first thing after the X, leading with the price, <b>because today it arrives two screens later and leads with “3 days free” — the same trial the paywall just offered</b>. 9,99 € against 14,99 € a week is a third less, and both are your own prices.',
  kept:'Your dark rays, the red “3 days Free” badge and the gradient button. We left out the 60-second timer, since we could not confirm the offer really expires.',
  out:'ARPU +10–15%'},
-home:{n:3,t:'Ask for tracking and notifications after the paywall',
- hyp:'Try asking here, once someone has started their trial, <b>because a system dialog during onboarding pulls attention at exactly the moment you are building momentum</b>. The dialogs and their wording are yours; only the moment moved.',
+home:{n:3,t:'Ask for consent, tracking and notifications after the paywall',
+ hyp:'Try asking here, once someone has started their trial, <b>because a system dialog during onboarding pulls attention at exactly the moment you are building momentum</b>. The three dialogs and their wording are yours; only the moment moved.',
  kept:'Your home screen as it ships. The achievements popup and the 7-step tour can follow these, as today.',
  out:'CR +10–15%'}
 };
@@ -906,7 +913,7 @@ function paintPanel(){
     if(d.hyp2){ h+='<div class="pn-sep"></div><div class="pn-n">Idea '+d.n2+' of 5</div><p class="pn-hyp" style="margin-top:12px">'+d.hyp2+'</p>'+outBlock('Potential outcome · based on Adapty data',d.out2); }
     h+='<div class="pn-kept"><b>Your design, unchanged.</b> '+d.kept+'</div>';
   }
-  if(S.lang!=='en') h+='<div class="pn-kept"><b>Language.</b> Screens are shown in '+(S.lang==='pl'?'Polish':'German')+' to show one flow serving every market — translated by us. Prices stay as shown on your own screens; reviews stay verbatim in English. '+(S.lang==='de'?'The paywall rating is your German App Store figure.':'We could not see your Polish storefront rating, so the paywall shows your US figure, labelled as such.')+'</div>';
+  if(S.lang!=='en') h+='<div class="pn-kept"><b>Language.</b> Screens are shown in '+(S.lang==='es'?'Spanish':'Brazilian Portuguese')+' — Latin America is where the app pays back best. Translated by us. Prices stay as shown on your own screens; reviews stay verbatim in English; the paywall rating is your US App Store figure, labelled as such.'+'</div>';
   h+='<div class="pn-foot">Ranges are Adapty’s expected effect from tests across 30,000+ subscription apps — not measured lift for ArtEasy. Prices, ratings, quotes and feature lines come from your own published material.</div>';
   document.getElementById('panel').innerHTML=h;
 }
